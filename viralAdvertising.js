@@ -1,26 +1,24 @@
-const calculateCumulative = (x, result) => {
+const calculateCumulative = (liked, shared) => {
     let workingTemp = 0;
-    workingTemp = Math.floor(x / 2);
-    result += workingTemp;
+    workingTemp = Math.floor(liked / 2);
+    shared += workingTemp;
     let temp = workingTemp * 3;
-    return {result, temp};
+    return {shared, temp};
 }
 
 function viralAdvertising(n) {
-    let result = 0;
     let i = 1;
-    let temp = 5;
     let t = {};
-    let r = {result: 0, temp: 5};
+    let result = {shared: 0, temp: 5};
     do {
         if (t.temp) {
-            r = t;
+            result = t;
         }
-        r = calculateCumulative(r.temp, r.result);
-        t = {...r};
+        result = calculateCumulative(result.temp, result.shared);
+        t = {...result};
         i++;
     } while (i <= n);
-    return r.result;
+    return result.shared;
 }
 
 console.log(viralAdvertising(5))
