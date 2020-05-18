@@ -1,14 +1,14 @@
 function circularArrayRotation(a, k, queries) {
-    if (a.length > k) {
-        a.unshift(...a.splice(-k))
-    } else {
-        let i = 0;
-        while (i < k) {
-            a.unshift(a.splice(-1));
-            i++
-        }
+    let result = [];
+    while (k > 0) {
+        let temp = a.pop();
+        a.unshift(temp);
+        k--;
     }
-    return a;
+    for (let i = 0; i <= queries.length - 1; i++) {
+        result.push(a[queries[i]]);
+    }
+    return result;
 }
 
 console.log(circularArrayRotation([1, 2, 3], 2, [0, 1, 2]));
