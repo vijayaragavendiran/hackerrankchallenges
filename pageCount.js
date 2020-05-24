@@ -9,3 +9,4 @@ function pageCount(n, p) {
 }
 
 console.log(pageCount(5, 4));
+
