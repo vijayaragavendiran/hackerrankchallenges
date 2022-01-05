@@ -10,5 +10,4 @@ var findMedianSortedArrays = function (nums1, nums2) {
 
   return merged[mid];
 };
-
 console.log(findMedianSortedArrays([1, 2], [3]));
