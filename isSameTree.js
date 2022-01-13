@@ -4,9 +4,8 @@ function TreeNode(val, left, right) {
     this.right = right === undefined ? null : right;
   }
   var isSameTree = function (p, q) {
-    debugger;
     if ((!p && q) || (p && !q) || (p && q && p.val !== q.val)) return false;
-    if (p && q) return isSameTree(p.left, q.left) && isSameTree(p.right && q.right);
+    if (p && q) return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
     return true;
   };
   
